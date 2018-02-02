@@ -593,7 +593,7 @@
                   <td><?php echo $s->rute_from ?></td>
                   <td><?php echo $s->rute_to ?></td>
                   <td><?php echo $s->price ?></td>
-                  <td><a style="cursor: pointer;" title="" onclick="href='<?php echo base_url(('admin/hapus_rute/'.$s->ruteid)); ?>'">Remove</a>
+                  <td><a style="cursor: pointer;" title="" onclick="href='<?php echo base_url(('admin/hapus_rute/'.$s->ruteid)); ?>'"><button type="button" class="btn btn-warning glyphicon glyphicon-edit"></button></a>
                   </td>
                 </tr>
                 <?php } ?>
