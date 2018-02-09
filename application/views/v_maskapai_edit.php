@@ -2,7 +2,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Traveler</title>
+  <title>AdminLTE 2 | Advanced form elements</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -30,20 +30,28 @@
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="<?php echo base_url('gudang/admin/dist/css/skins/_all-skins.min.css'); ?>">
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
   <!-- Google Font -->
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-red sidebar-mini">
 <div>
 
   <header class="main-header">
     <!-- Logo -->
-    <a href="index2.html" class="logo">
+    <a href="../../index2.html" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>A</b>LT</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="fa fa-plane"><b>Terbang</b>Yuk!</span>
+      <span class="logo-lg"><b>Admin</b>LTE</span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
@@ -316,12 +324,12 @@
           <img src="<?php echo base_url('gudang/admin/dist/img/user2-160x160.jpg'); ?>" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Alexander Pierce</p>
+          <p><?php echo $this->session->userdata('username')?></p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
       <!-- search form -->
-      <form action="#" method="get" class="sidebar-form">
+      <form class="sidebar-form">
         <div class="input-group">
           <input type="text" name="q" class="form-control" placeholder="Search...">
           <span class="input-group-btn">
@@ -339,7 +347,7 @@
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
           </a>
         </li>
-        <li class="active treeview">
+        <li class="treeview">
           <a href="#">
             <i class="fa fa-map"></i> <span>Rutes</span>
             <span class="pull-right-container">
@@ -348,10 +356,10 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="<?php echo base_url('admin/rute_data'); ?>"><i class="fa fa-circle-o"></i> Data</a></li>
-            <li class="active"><a href="<?php echo base_url('admin/rute'); ?>"><i class="fa fa-circle-o"></i>Tambah</a></li>
+            <li><a href="<?php echo base_url('admin/rute'); ?>"><i class="fa fa-circle-o"></i>Tambah</a></li>
           </ul>
         </li>
-        <li class="treeview">
+        <li class="active treeview">
           <a href="#">
             <i class="fa fa-plane"></i> <span>Maskapai</span>
             <span class="pull-right-container">
@@ -400,44 +408,26 @@
               <h3 class="box-title">Input masks</h3>
             </div>
             <div class="box-body">
-              <form action="<?php echo base_url('admin/proses_tambah'); ?>" method="post">
-                <div class="bootstrap-timepicker">
+            <?php foreach($maskapaiedit as $m){ ?>
+              <form action="<?php echo base_url('admin/update_maskapai'); ?>" method="POST">
                 <div class="form-group">
-                  <label>Depart At:</label>
-
-                  <div class="input-group">
-                    <input type="text" class="form-control timepicker" name="depart">
-
-                    <div class="input-group-addon">
-                      <i class="fa fa-clock-o"></i>
-                    </div>
-                  </div>
-                </div>
+                  <label>Code</label>
+                  <input type="hidden" name="id" value="<?php echo $m->id ?>">
+                  <input type="text" class="form-control" name="code" required="true" value="<?php echo $m->code ?>">
                 </div>
                 <div class="form-group">
-                  <label>Rute From :</label>
-                  <input type="text" class="form-control" name="rutefrom" required="true">
-                </div>
+                  <label>Description</label>
+                  <input type="text" class="form-control" name="description" required="true" value="<?php echo $m->description ?>">
+                </div>  
                 <div class="form-group">
-                  <label>Rute To :</label>
-                  <input type="text" class="form-control" name="ruteto" required="true">
-                </div>
-                <div class="form-group">
-                <label>Maskapai</label>
-                <select class="form-control select2" style="width: 100%;" name="maskapai">
-                <?php foreach ($maskapai as $m) { ?>
-                  <option value="<?php echo $m->id ?>"><?php echo $m->description ?></option>
-                  <?php } ?>
-                </select>
-              </div>
-                <div class="form-group">
-                  <label>Price :</label>
-                  <input type="text" class="form-control" name="price" required="true">
+                  <label>Seat Quantity</label>
+                  <input type="text" class="form-control" name="seat_qty" required="true" value="<?php echo $m->seat_qty ?>">
                 </div>
                 <div class="box-footer">
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <input type="submit" class="btn btn-primary" value="Submit">
                 </div>
               </form>
+              <?php } ?>
             </div>
             <!-- /.box-body -->
           </div>
@@ -763,3 +753,18 @@
 </script>
 </body>
 </html>
+
+    © 2018 GitHub, Inc.
+    Terms
+    Privacy
+    Security
+    Status
+    Help
+
+    Contact GitHub
+    API
+    Training
+    Shop
+    Blog
+    About
+

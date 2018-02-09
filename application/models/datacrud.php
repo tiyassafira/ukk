@@ -24,5 +24,29 @@ class datacrud extends CI_Model{
   $this->db->where($where);
   $this->db->update($table,$data);
  } 
+ function tampil_maskapai(){
+    return $this->db->get('transportation');
+ } 
+  function input_maskapai($data,$table){
+  $this->db->insert($table,$data);
+ }
+ function hapus_maskapai($table,$where){
+  $this->db->where($where);
+  $this->db->delete($table);
+ }
+ function edit_maskapai($where,$table){  
+  return $this->db->get_where($table,$where);
+ }
+ function update_maskapai($id,$data,$table){
+  $this->db->where('id', $id);
+  $this->db->update($table,$data);
+ }
+ function join_rute_maskapai(){
+  $this->db->select('rute.ruteid, rute.depart_at, rute.rute_from, rute.rute_to, rute.price, transportation.description');
+  $this->db->from('rute');
+  $this->db->join('transportation', 'transportation.id = rute.transportid');
+  return $this->db->get();
+ }
+
 }
 ?>
