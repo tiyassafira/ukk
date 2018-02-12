@@ -47,6 +47,22 @@ class datacrud extends CI_Model{
   $this->db->join('transportation', 'transportation.id = rute.transportid');
   return $this->db->get();
  }
+ function tampil_databandara(){
+  return $this->db->get('airport');
+ }
+ function input_databandara($data,$table){
+  $this->db->insert($table,$data);
+ }
+ function tampil_rute($from,$to){
+  $this->db->select("rute.id,rute.depart_at,rute.rute_from,rute.rute_to,rute.price,transportation.description");
+  $this->db->from('rute');
+  $this->db->join()('transportation','transportation.id = rute.transportid');
+  $this->db->where('rute.rute_from', $from);
+  $this->db->where('rute.rute_to',$to);
+  $query = $this->db->get();
+  return $query->result();
+
+ }
 
 }
 ?>

@@ -111,10 +111,10 @@
 
 										<div class="tab-content">
 											<div class="tab-content-inner active" data-content="signup">
-												<h3><center>Login</center></h3>
+												<h3><center>Book Your Trip</center></h3>
 
 
-													<form action="<?php echo base_url('home/action')?>" method="POST">
+													<!-- <form action="<?php echo base_url('home/action')?>" method="POST">
 														<div id="container-formlogin"></div>
 
 													</div>
@@ -131,38 +131,34 @@
 														</label>
 														
 													</div>
-													</form>
-													<div class="container" style="background-color:#f1f1f1" style="width: 281px;">
+													</form> -->
+											<!-- 		<div class="container" style="background-color:#f1f1f1" style="width: 281px;">
 														<button type="button" class="cancelbtn">Cancel</button>
 														<span class="psw">Forgot <a href="#">password?</a></span>
-													</div>
-												</div>
-
-												<!-- <div class="row form-group">
-													<div class="col-md-12">
-														<label for="fullname">Your Name</label>
-														<input type="text" id="fullname" class="form-control">
-													</div>
+													</div> -->
+												<!-- </div> -->
+												<form action="<?php echo base_url('client/carirute') ?>" method="post">
+												<div class="row form-group">
 												</div>
 												<div class="row form-group">
 													<div class="col-md-12">
 														<label for="activities">Activities</label>
-														<select name="#" id="activities" class="form-control">
-															<option value="">Activities</option>
-															<option value="">Hiking</option>
-															<option value="">Caving</option>
-															<option value="">Swimming</option>
+														<select name="from" id="activities" class="form-control">
+															<?php foreach ($bandara as $b) { ?>
+																<option value=""><?php echo $b->name ?></option>
+															<?php } ?>
+															
+															
 														</select>
 													</div>
 												</div>
 												<div class="row form-group">
 													<div class="col-md-12">
 														<label for="destination">Destination</label>
-														<select name="#" id="destination" class="form-control">
-															<option value="">Philippines</option>
-															<option value="">USA</option>
-															<option value="">Australia</option>
-															<option value="">Singapore</option>
+														<select name="to" id="destination" class="form-control">
+															<?php foreach ($bandara as $b) { ?>
+															<option value=""><?php echo $b->name ?></option>
+															<?php } ?>
 														</select>
 													</div>
 												</div>
@@ -179,7 +175,7 @@
 														<input type="submit" class="btn btn-primary btn-block" value="Submit">
 													</div>
 												</div>
-											</form>	 -->
+											</form>
 										</div>
 
 										

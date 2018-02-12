@@ -46,6 +46,7 @@ class Admin extends CI_Controller {
 
 	function rute(){
 		$data['maskapai'] = $this->datacrud->tampil_maskapai()->result();
+		$data['bandara'] = $this->datacrud->tampil_databandara()->result();
 		$this->load->view('v_rute',$data);
 	}
 	function proses_tambah(){
@@ -138,5 +139,28 @@ class Admin extends CI_Controller {
 		$this->datacrud->input_maskapai($data,'transportation');
 		redirect('admin/maskapai_data');
 	}
+	function proses_tambahbandara(){
+		$code = $this->input->post('kode');
+		$name = $this->input->post('nama');
+		$city = $this->input->post('kota');
+		
+		$data = array(
+			'code' => $code,
+			'name' => $name,
+			'city' => $city
+		);
+
+		$this->datacrud->input_databandara($data, 'airport');
+		redirect('admin/bandara');
+
+	}
+	function databandara(){
+		$data['bandara'] = $this->datacrud->tampil_databandara()->result();
+		$this->load->view('v_bandara_data',$data);
+	}
+	function bandara(){
+		$this->load->view('v_bandara');
+	}
+
 }
 
