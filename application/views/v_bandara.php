@@ -301,7 +301,7 @@
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-                  <a href="<?php echo base_url('login/logout'); ?>" class="btn btn-default btn-flat">Sign out</a>
+                  <a href="<?php echo base_url('home/logout');?>" class="btn btn-default btn-flat">Sign out</a>
                 </div>
               </li>
             </ul>
@@ -355,7 +355,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="<?php echo base_url('admin/rute'); ?>"><i class="fa fa-plus"></i>Tambah</a></li>
-            <li><a href="<?php echo base_url('admin/datarute'); ?>"><i class="fa fa-database"></i> Data</a></li>
+            <li><a href="<?php echo base_url('admin/rute_data'); ?>"><i class="fa fa-database"></i> Data</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -368,7 +368,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="<?php echo base_url('admin/maskapai'); ?>"><i class="fa fa-plus"></i>Tambah</a></li>
-            <li><a href="<?php echo base_url('admin/datamaskapai'); ?>"><i class="fa fa-database"></i> Data</a></li>
+            <li><a href="<?php echo base_url('admin/maskapai_data'); ?>"><i class="fa fa-database"></i> Data</a></li>
           </ul>
         </li>
         <li class="treeview active">
@@ -381,7 +381,7 @@
           </a>
           <ul class="treeview-menu">
             <li class="active"><a href="<?php echo base_url('admin/bandara'); ?>"><i class="fa fa-plus"></i>Tambah</a></li>
-            <li><a href="<?php echo base_url('admin/databandara'); ?>"><i class="fa fa-database"></i> Data</a></li>
+            <li><a href="<?php echo base_url('admin/data_bandara'); ?>"><i class="fa fa-database"></i> Data</a></li>
           </ul>
         </li>
       </ul>

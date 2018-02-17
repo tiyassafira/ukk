@@ -75,7 +75,7 @@
 					</div>
 					<div class="col-xs-8 text-right menu-1">
 						<ul>
-							<li><a href="login.html">Login</a></li>
+							<li><a href="login.html">Destination</a></li>
 							<li class="has-dropdown">
 								<a href="#">Travel</a>
 								<ul class="dropdown">
@@ -111,7 +111,7 @@
 
 										<div class="tab-content">
 											<div class="tab-content-inner active" data-content="signup">
-												<h3><center>Book Your Trip</center></h3>
+												<h3><center>Find Your Trip</center></h3>
 
 
 													<!-- <form action="<?php echo base_url('home/action')?>" method="POST">

@@ -13,7 +13,7 @@ class Client extends CI_Controller
 	
 	}
 	function index(){
-			$data['bandara'] = $this->datacrud->tampil_databandara()->result();
+			$data['airport'] = $this->datacrud->tampil_data_bandara()->result();
 			$this->load->view('v_home',$data);
 	}
 	function carirute(){

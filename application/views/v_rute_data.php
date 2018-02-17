@@ -302,7 +302,7 @@
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                  <a href="<?php echo base_url('home/logout');?>" class="btn btn-default btn-flat">Sign out</a>
                 </div>
               </li>
             </ul>
@@ -355,28 +355,30 @@
             <li><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
           </ul>
         </li>
-        <li class="active treeview">
-          <a href="#">
-            <i class="fa fa-dashboard"></i> <span>Rutes</span>
+         <li class="treeview active">
+            <a href="">
+            <i class="fa fa-map"></i>
+            <span>Rutes</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="active"><a href="<?php echo base_url('admin/rute_data'); ?>"><i class="fa fa-circle-o"></i> Data</a></li>
-            <li><a href="<?php echo base_url('admin/rute'); ?>"><i class="fa fa-circle-o"></i>Tambah</a></li>
+            <li><a href="<?php echo base_url('admin/rute'); ?>"><i class="fa fa-plus"></i>Tambah</a></li>
+            <li class="active"><a href="<?php echo base_url('admin/rute_data'); ?>"><i class="fa fa-database"></i> Data</a></li>
           </ul>
         </li>
         <li class="treeview">
-          <a href="#">
-            <i class="fa fa-plane"></i> <span>Maskapai</span>
+          <a href="">
+            <i class="fa fa-plane"></i>
+            <span>Maskapai</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?php echo base_url('admin/maskapai_data'); ?>"><i class="fa fa-circle-o"></i> Data</a></li>
-            <li class="active"><a href="<?php echo base_url('admin/maskapai'); ?>"><i class="fa fa-circle-o"></i>Tambah</a></li>
+            <li><a href="<?php echo base_url('admin/maskapai'); ?>"><i class="fa fa-plus"></i>Tambah</a></li>
+            <li><a href="<?php echo base_url('admin/maskapai_data'); ?>"><i class="fa fa-database"></i> Data</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -389,11 +391,11 @@
           </a>
           <ul class="treeview-menu">
             <li class="#"><a href="<?php echo base_url('admin/bandara'); ?>"><i class="fa fa-plus"></i>Tambah</a></li>
-            <li><a href="<?php echo base_url('admin/databandara'); ?>"><i class="fa fa-database"></i> Data</a></li>
+            <li><a href="<?php echo base_url('admin/data_bandara'); ?>"><i class="fa fa-database"></i> Data</a></li>
           </ul>
         </li>
       </ul>
-        
+   
       </ul>
     </section>
     <!-- /.sidebar -->
