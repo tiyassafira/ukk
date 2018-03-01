@@ -161,6 +161,33 @@ class Admin extends CI_Controller {
 	function bandara(){
 		$this->load->view('v_bandara');
 	}
+	function hapus_bandara($id){
+		$where = array('id' => $id);
+		$this->datacrud->hapus_datarute($where,'airport');
+		redirect('admin/data_bandara');
+	}
+
+	function edit_bandara($id){
+		$where = array('id' => $id);
+		$data['bandara'] = $this->datacrud->edit_datarute($where,'airport')->result();
+		$this->load->view('v_bandaraedit',$data);
+	}
+	function update_bandara(){
+		$id = $this->input->post('id');
+		$code = $this->input->post('code');
+		$name = $this->input->post('name');
+		$city = $this->input->post('city');  
+		$data = array(
+			'code' => $code,
+			'name' => $name,
+			'city' => $city,
+			'id' =>$airport,
+			);
+		$where = array(
+			'id' => $id
+			);
+		$this->datacrud->update_datarute($where,$data,'airport');
+		redirect('admin/data_bandara');
+	}
 
 }
-

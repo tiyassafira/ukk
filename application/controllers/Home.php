@@ -38,8 +38,7 @@ class Home extends CI_Controller {
 	}
 
 	function action(){
-		if ($this->input->post('submit')) {
-			# code...
+
 			$username=$this->input->post('uname');
 			$password=md5($this->input->post('psw'));
 
@@ -60,7 +59,7 @@ class Home extends CI_Controller {
 			}else{
 				echo "Not Registered";
 			}
-		}
+		
 	}
 
 	function logout (){

@@ -43,7 +43,7 @@
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
-<body class="hold-transition skin-red sidebar-mini">
+<body class="hold-transition skin-blue sidebar-mini">
 <div>
 
   <header class="main-header">
@@ -54,15 +54,6 @@
       <!-- logo for regular state and mobile devices -->
       <span class="fa fa-plane"><b>Terbang</b>Yuk!</span>
     </a>
-    <!-- Header Navbar: style can be found in header.less -->
-    <nav class="navbar navbar-static-top">
-      <!-- Sidebar toggle button-->
-      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
       <!-- Sidebar toggle button-->
@@ -277,8 +268,7 @@
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="<?php echo base_url('gudang/admin/dist/img/user2-160x160.jpg'); ?>" class="user-image" alt="User Image">
-              <span class="hidden-xs"><?php echo $this->session->userdata('username')?>
-              </span>
+              <span class="hidden-xs"><?php echo $this->session->userdata("nama"); ?></span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
@@ -286,14 +276,14 @@
                 <img src="<?php echo base_url('gudang/admin/dist/img/user2-160x160.jpg'); ?>" class="img-circle" alt="User Image">
 
                 <p>
-                  <?php echo $this->session->userdata('username')?>
+                  <?php echo $this->session->userdata("nama"); ?>
                   <small>Member since Nov. 2012</small>
                 </p>
               </li>
               <!-- Menu Body -->
               <li class="user-body">
                 <div class="row">
-                  <div class="col-xs-4 tex t-center">
+                  <div class="col-xs-4 text-center">
                     <a href="#">Followers</a>
                   </div>
                   <div class="col-xs-4 text-center">
@@ -334,7 +324,7 @@
           <img src="<?php echo base_url('gudang/admin/dist/img/user2-160x160.jpg'); ?>" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p><?php echo $this->session->userdata('username')?></p>
+          <p><?php echo $this->session->userdata("nama"); ?></p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
@@ -348,24 +338,15 @@
               </span>
         </div>
       </form>
-      <!-- /.search form -->
-      <!-- sidebar menu: : style can be found in sidebar.less -->
-       <ul class="sidebar-menu" data-widget="tree">
+      <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
-        <li class="treeview">
-          <a href="#">
+        <li>
+          <a href="<?php echo base_url('admin'); ?>">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
           </a>
-          <ul class="treeview-menu">
-            <li><a href="index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
-            <li><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
-          </ul>
         </li>
-         <li class="treeview active">
-            <a href="">
+        <li class="treeview">
+          <a href="">
             <i class="fa fa-map"></i>
             <span>Rutes</span>
             <span class="pull-right-container">
@@ -374,7 +355,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="<?php echo base_url('admin/rute'); ?>"><i class="fa fa-plus"></i>Tambah</a></li>
-            <li class="active"><a href="<?php echo base_url('admin/rute_data'); ?>"><i class="fa fa-database"></i> Data</a></li>
+            <li><a href="<?php echo base_url('admin/rute_data'); ?>"><i class="fa fa-database"></i> Data</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -390,7 +371,7 @@
             <li><a href="<?php echo base_url('admin/maskapai_data'); ?>"><i class="fa fa-database"></i> Data</a></li>
           </ul>
         </li>
-        <li class="treeview">
+        <li class="treeview active">
           <a href="">
             <i class="glyphicon glyphicon-map-marker"></i>
             <span>Bandara</span>
@@ -399,12 +380,10 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="#"><a href="<?php echo base_url('admin/bandara'); ?>"><i class="fa fa-plus"></i>Tambah</a></li>
+            <li class="active"><a href="<?php echo base_url('admin/bandara'); ?>"><i class="fa fa-plus"></i>Tambah</a></li>
             <li><a href="<?php echo base_url('admin/data_bandara'); ?>"><i class="fa fa-database"></i> Data</a></li>
           </ul>
         </li>
-      </ul>
-   
       </ul>
     </section>
     <!-- /.sidebar -->
@@ -415,74 +394,46 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Advanced Form Elements
-        <small>Preview</small>
+        Route
       </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Forms</a></li>
-        <li class="active">Advanced Elements</li>
-      </ol>
     </section>
-
-    <!-- Main content -->
     <section class="content">
-
-      <!-- SELECT2 EXAMPLE -->
-      <div class="box box-default">
-      </div>
-      <!-- /.box -->
-
       <div class="row">
-        
-        <div class="col-md-12">
-          <div class="box">
+        <div class="col-md-4">
+
+          <div class="box box-primary">
             <div class="box-header">
-              <h3 class="box-title">Data Table With Full Features</h3>
+              <h3 class="box-title">Input masks</h3>
             </div>
-            <!-- /.box-header -->
+            <?php foreach($bandara as $b){?>
             <div class="box-body">
-              <table id="example1" class="table table-bordered table-striped">
-                <thead>
-                <tr>
-                  <th style="width: 10px">#</th>
-                  <th>Depart At</th>
-                  <th>Rute From</th>
-                  <th>Rute To</th>
-                  <th>Maskapai</th>
-                  <th>Price</th>
-                  <th>Action</th>
-            
-                </tr>
-                  
-                </thead>
-                <?php 
-                  $no = 1;
-                  foreach($rute as $s){ ?>
-                <tr>
-                  <td><?php echo $no++ ?></td>
-                  <td><?php echo $s->depart_at ?></td>
-                  <td><?php echo $s->rute_from ?></td>
-                  <td><?php echo $s->rute_to ?></td>
-                  <td><?php echo $s->description ?></td>
-                  <td><?php echo $s->price ?></td>
-                  <td><a style="cursor: pointer;" title="" onclick="href='<?php echo base_url(('admin/hapus_rute/'.$s->ruteid)); ?>'"><button type="button" class="btn btn-danger glyphicon glyphicon-trash"></button></a>
-                    <a style="cursor: pointer;" title="" onclick="href='<?php echo base_url(('admin/edit_rute/'.$s->ruteid)); ?>'"><button type="button" class="btn btn-warning glyphicon glyphicon-edit"></button></a>
-                  </td>
-                </tr>
-                <?php } ?>
-              </table>
+              <form action="<?php echo base_url('admin/update_bandara'); ?>" method="post">
+                <div class="form-group">
+                  <label>Kode :</label>
+                  <input type="hidden" class="form-control" name="id" value="<?php echo $b->id ?>" required="true">
+                  <input type="text" class="form-control" name="code" value="<?php echo $b->code ?>"  required="true">
+                </div>
+                <div class="form-group">
+                  <label>Nama Bandara :</label>
+                  <input type="text" class="form-control" name="name" value="<?php echo $b->name ?>"  required="true">
+                </div> 
+                <div class="form-group">
+                  <label>Kota :</label>
+                  <input type="text" class="form-control" name="city" value="<?php echo $b->city ?> " required="true">
+                </div>
+                <div class="box-footer">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+              </form>
+              <?php }?>
             </div>
             <!-- /.box-body -->
           </div>
           <!-- /.box -->
         </div>
-
       </div>
-      <!-- /.row -->
-
+    <!-- /.row -->
     </section>
-    <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
@@ -492,12 +443,6 @@
     <strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
     reserved.
   </footer>
-
-  <!-- Control Sidebar -->
- 
-  <!-- /.control-sidebar -->
-  <!-- Add the sidebar's background. This div must be placed
-       immediately after the control sidebar -->
   <div class="control-sidebar-bg"></div>
 </div>
 <!-- ./wrapper -->
@@ -536,22 +481,8 @@
 <!-- AdminLTE App -->
 <script src="<?php echo base_url('gudang/admin/dist/js/adminlte.min.js'); ?>"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="<?php echo base_url(); ?>gudang/admin/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
-<script src="<?php echo base_url(); ?>gudang/admin/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script src="<?php echo base_url('gudang/admin/dist/js/demo.js'); ?>"></script>
 <!-- Page script -->
-<script>
-  $(function () {
-    $('#example1').DataTable()
-    $('#example2').DataTable({
-      'paging'      : true,
-      'lengthChange': false,
-      'searching'   : false,
-      'ordering'    : true,
-      'info'        : true,
-      'autoWidth'   : false
-    })
-  })
-</script>
 <script>
   $(function () {
     //Initialize Select2 Elements

@@ -1,8 +1,9 @@
+<!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 2 | Advanced form elements</title>
+  <title>Traveler</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -42,7 +43,7 @@
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
-<body class="hold-transition skin-red sidebar-mini">
+<body class="hold-transition skin-blue sidebar-mini">
 <div>
 
   <header class="main-header">
@@ -51,8 +52,17 @@
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>A</b>LT</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Admin</b>LTE</span>
+      <span class="fa fa-plane"><b>Terbang</b>Yuk!</span>
     </a>
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top">
+      <!-- Sidebar toggle button-->
+      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
       <!-- Sidebar toggle button-->

@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
@@ -9,7 +10,6 @@
   <link rel="stylesheet" href="<?php echo base_url('gudang/admin/bower_components/bootstrap/dist/css/bootstrap.min.css'); ?>">
   <link rel="stylesheet" href="<?php echo base_url('gudang/admin/bower_components/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css'); ?>">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="<?php echo base_url();?>gudang/admin/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
   <link rel="stylesheet" href="<?php echo base_url('gudang/admin/bower_components/font-awesome/css/font-awesome.min.css'); ?>">
   <!-- Ionicons -->
   <link rel="stylesheet" href="<?php echo base_url('gudang/admin/bower_components/Ionicons/css/ionicons.min.css'); ?>">
@@ -43,7 +43,7 @@
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
-<body class="hold-transition skin-red sidebar-mini">
+<body class="hold-transition skin-blue sidebar-mini">
 <div>
 
   <header class="main-header">
@@ -54,6 +54,15 @@
       <!-- logo for regular state and mobile devices -->
       <span class="fa fa-plane"><b>Terbang</b>Yuk!</span>
     </a>
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top">
+      <!-- Sidebar toggle button-->
+      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
       <!-- Sidebar toggle button-->

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 2 | Advanced form elements</title>
+  <title>Traveler</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -52,7 +52,7 @@
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>A</b>LT</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Hera</b>Wati</span>
+      <span class="fa fa-plane"><b>Terbang</b>Yuk!</span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
@@ -396,40 +396,58 @@
       <h1>
         Route
       </h1>
-    </section>
     <section class="content">
-      <div class="row">
-        <div class="col-md-4">
 
-          <div class="box box-primary">
+      <!-- SELECT2 EXAMPLE -->
+      <div class="box box-default">
+      </div>
+      <!-- /.box -->
+
+      <div class="row">
+        
+        <div class="col-md-12">
+          <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Input masks</h3>
+              <h3 class="box-title">Data Table With Full Features</h3>
             </div>
+            <!-- /.box-header -->
             <div class="box-body">
-              <form action="<?php echo base_url('admin/proses_tambahbandara'); ?>" method="post">
-                <div class="form-group">
-                  <label>Kode :</label>
-                  <input type="text" class="form-control" name="kode" required="true">
-                </div>
-                <div class="form-group">
-                  <label>Nama Bandara :</label>
-                  <input type="text" class="form-control" name="nama" required="true">
-                </div> 
-                <div class="form-group">
-                  <label>Kota :</label>
-                  <input type="text" class="form-control" name="kota" required="true">
-                </div>
-                <div class="box-footer">
-                  <button type="submit" class="btn btn-primary">Submit</button>
-                </div>
-              </form>
+              <table id="example1" class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                  <th style="width: 10px">#</th>
+                  
+                  <th>Code</th>
+                  <th>Name</th>
+                  <th>City</th>
+                  
+            
+                </tr>
+                  
+                </thead>
+                <?php 
+                  $no = 1;
+                  foreach($airport as $s){ ?>
+                <tr>
+                  <td><?php echo $no++ ?></td>
+                  <td><?php echo $s->code ?></td>
+                  <td><?php echo $s->name ?></td>
+                  <td><?php echo $s->city ?></td>
+                  <td><a style="cursor: pointer;" title="" onclick="href='<?php echo base_url(('admin/hapus_bandara/'.$s->id)); ?>'"><button type="button" class="btn btn-danger glyphicon glyphicon-trash"></button></a>
+                    <a style="cursor: pointer;" title="" onclick="href='<?php echo base_url(('admin/edit_bandara/'.$s->id)); ?>'"><button type="button" class="btn btn-warning glyphicon glyphicon-edit"></button></a>
+                  </td>
+                </tr>
+                <?php } ?>
+              </table>
             </div>
             <!-- /.box-body -->
           </div>
           <!-- /.box -->
         </div>
+
       </div>
-    <!-- /.row -->
+      <!-- /.row -->
+
     </section>
   </div>
   <!-- /.content-wrapper -->
